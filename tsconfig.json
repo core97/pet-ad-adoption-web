@@ -21,8 +21,10 @@
       }
     ],
     "paths": {
-      "@ui/*": ["./modules/shared/presentation/ui/*"],
+      "@auth/*": ["./modules/authentication/*"],
       "@components/*": ["./modules/shared/presentation/components/*"],
+      "@hooks/*": ["./modules/shared/presentation/hooks/*"],
+      "@ui/*": ["./modules/shared/presentation/ui/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
