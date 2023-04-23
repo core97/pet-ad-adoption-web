@@ -2,9 +2,10 @@
 
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider } from '@chakra-ui/react';
+import { chakraTheme } from 'styles/chakra-theme';
 
 export const Providers = ({ children }: { children: React.ReactNode }) => (
   <CacheProvider>
-    <ChakraProvider>{children}</ChakraProvider>
+    <ChakraProvider theme={chakraTheme}>{children}</ChakraProvider>
   </CacheProvider>
 );
