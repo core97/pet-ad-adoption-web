@@ -13,10 +13,7 @@ export const fetcher = async <T>(
     },
   };
 
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_HOST}${url}`,
-    requestInit
-  );
+  const res = await fetch(url, requestInit);
 
   const contentType =
     res.headers.get('content-type') || res.headers.get('Content-Type');

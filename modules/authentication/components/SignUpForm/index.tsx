@@ -4,15 +4,28 @@ import { useForm } from 'react-hook-form';
 import { Button, VStack, Container } from '@chakra-ui/react';
 import { InputText } from '@ui/InputText';
 import { useAsync } from '@hooks/useAsync';
+import { signUp } from '@auth/auth-service';
 import { SignUpFormFields } from './SignUpForm.interface';
 
 export const SignUpForm = () => {
   const { handleSubmit, control } = useForm<SignUpFormFields>();
 
-  const onSubmit = useAsync(async (data: SignUpFormFields) => {
-    const user = await Promise.resolve(data);
-    console.log(user);
-  });
+  const onSubmit = useAsync(
+    async (data: SignUpFormFields) => {
+      const user = await signUp({
+        email: data.email,
+        name: data.name,
+        password: data.password,
+      });
+
+      console.log(user);
+    },
+    {
+      onSuccess: {
+        redirect: '/',
+      },
+    }
+  );
 
   return (
     <Container as="section" maxWidth="md">

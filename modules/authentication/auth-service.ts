@@ -4,6 +4,7 @@ export const signIn = async (params: { email: string; password: string }) => {
   const user = await fetcher(
     `${process.env.NEXT_PUBLIC_API_URL}/users/sign-in`,
     {
+      credentials: 'include',
       method: 'PUT',
       body: JSON.stringify({ email: params.email, password: params.password }),
     }
@@ -20,6 +21,7 @@ export const signUp = async (params: {
   const user = await fetcher(
     `${process.env.NEXT_PUBLIC_API_URL}/users/sign-up`,
     {
+      credentials: 'include',
       method: 'POST',
       body: JSON.stringify({
         email: params.email,
