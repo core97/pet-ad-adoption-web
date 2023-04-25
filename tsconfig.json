@@ -25,6 +25,7 @@
       "@components/*": ["./modules/shared/presentation/components/*"],
       "@hooks/*": ["./modules/shared/presentation/hooks/*"],
       "@ui/*": ["./modules/shared/presentation/ui/*"],
+      "@user/*": ["./modules/user/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
