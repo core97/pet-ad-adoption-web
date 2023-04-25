@@ -5,10 +5,12 @@ import { Button, VStack, Container } from '@chakra-ui/react';
 import { InputText } from '@ui/InputText';
 import { useAsync } from '@hooks/useAsync';
 import { signUp } from '@auth/auth-service';
+import { useUser } from '@user/presentation/hooks/useUser';
 import { SignUpFormFields } from './SignUpForm.interface';
 
 export const SignUpForm = () => {
   const { handleSubmit, control } = useForm<SignUpFormFields>();
+  const { setUser } = useUser();
 
   const onSubmit = useAsync(
     async (data: SignUpFormFields) => {
@@ -18,7 +20,7 @@ export const SignUpForm = () => {
         password: data.password,
       });
 
-      console.log(user);
+      setUser(user);
     },
     {
       onSuccess: {
