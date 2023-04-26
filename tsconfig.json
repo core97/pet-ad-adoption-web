@@ -24,6 +24,7 @@
       "@auth/*": ["./modules/authentication/*"],
       "@components/*": ["./modules/shared/presentation/components/*"],
       "@hooks/*": ["./modules/shared/presentation/hooks/*"],
+      "@shared/*": ["./modules/shared/*"],
       "@ui/*": ["./modules/shared/presentation/ui/*"],
       "@user/*": ["./modules/user/*"],
     }
