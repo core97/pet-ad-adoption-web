@@ -6,4 +6,5 @@ export enum AppPages {
 
 export enum DashboardPages {
   home = '/dashboard',
+  breeds = '/dashboard/breeds/:petType',
 }

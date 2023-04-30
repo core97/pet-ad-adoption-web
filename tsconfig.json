@@ -22,6 +22,7 @@
     ],
     "paths": {
       "@auth/*": ["./modules/authentication/*"],
+      "@breed/*": ["./modules/breed/*"],
       "@components/*": ["./modules/shared/presentation/components/*"],
       "@hooks/*": ["./modules/shared/presentation/hooks/*"],
       "@shared/*": ["./modules/shared/*"],
