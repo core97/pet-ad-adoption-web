@@ -1,9 +1,11 @@
 import { cookies } from 'next/headers';
 import { Inter } from 'next/font/google';
-import { UserContextProvider } from '@user/presentation/hooks/useUser';
 import { getUserBySession } from '@user/user-service';
-import { Providers } from 'modules/shared/presentation/providers/chakra-provider';
+import { UserContextProvider } from '@user/presentation/hooks/useUser';
+import { DashboardNavbar } from '@shared/presentation/components/DashboardNavbar';
+import { Providers } from '@shared/presentation/providers/chakra-provider';
 import { AUTH_COOKIE } from '@shared/application/config';
+import { Sidebar } from '@ui/Sidebar';
 import 'styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -22,7 +24,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       <body className={inter.className}>
         <Providers>
           <UserContextProvider initialUser={user}>
-            {children}
+            <Sidebar navigation={<DashboardNavbar />}>{children}</Sidebar>
           </UserContextProvider>
         </Providers>
       </body>
